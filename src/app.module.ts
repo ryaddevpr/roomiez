@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PropertyModule } from './property/property.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { pgConfig } from 'src/dbConfig';
+import { pgConfig } from './dbConfig';
 import { ConfigModule } from '@nestjs/config';
 import { UtilisateurModule } from './utilisateur/utilisateur.module';
 @Module({
