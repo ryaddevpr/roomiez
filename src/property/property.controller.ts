@@ -3,25 +3,18 @@ import {
   Controller,
   Delete,
   Get,
-  Headers,
-  HttpCode,
   Param,
   ParseIntPipe,
   Patch,
   Post,
   UsePipes,
-  ValidationPipe,
 } from '@nestjs/common';
-import { CreatePropertyDto } from './dto/createProperty.dto';
-import { IdParamDto } from './dto/idParam.dto';
 import { ParseIdPipe } from './pipes/parseIdPipes';
 import { ZodValidationPipe } from './pipes/zodValidationPipe';
 import {
   CreatePropertyZodDto,
   createPropertyZodSchema,
 } from './dto/createPropertyZod.dto';
-import { HeadersDto } from './dto/headers.dto';
-import { RequestHeader } from './pipes/request-header';
 import { PropertyService } from './property.service';
 import { UpdatePropertyDto } from './dto/updateProperty.dto';
 

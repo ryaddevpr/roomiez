@@ -4,7 +4,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Utilisateur } from 'src/entities/utilisateur.entity';
+import { Utilisateur } from '../entities/utilisateur.entity';
 import { Repository } from 'typeorm';
 import { CreateUtilisateurZodDto } from './dto/createCustomerZod.dto';
 import { UpdateUtilisateurDto } from './dto/updateUtilisateur.dto';
@@ -51,6 +51,6 @@ export class UtilisateurService {
   }
 
 
-  
+
 
 }

@@ -1,4 +1,4 @@
-import { UtilisateurRole } from 'src/types/utilisateur';
+import { UtilisateurRole } from '../../types/utilisateur';
 import { z } from 'zod';
 
 export const createUtilisateurZodSchema = z

@@ -1,5 +1,5 @@
 import { IsEmail, IsEnum, IsString } from 'class-validator';
-import { UtilisateurRole } from 'src/types/utilisateur';
+import { UtilisateurRole } from '../../types/utilisateur';
 
 export class CreateUtilisateurDto {
   @IsString()
