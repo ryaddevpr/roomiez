@@ -3,7 +3,7 @@ import { APP_PIPE } from '@nestjs/core';
 import { UtilisateurController } from './utilisateur.controller';
 import { UtilisateurService } from './utilisateur.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Utilisateur } from 'src/entities/utilisateur.entity';
+import { Utilisateur } from '../entities/utilisateur.entity';
 
 @Module({
   controllers: [UtilisateurController],

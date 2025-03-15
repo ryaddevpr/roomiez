@@ -5,8 +5,6 @@ import { PropertyModule } from './property/property.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { pgConfig } from 'src/dbConfig';
 import { ConfigModule } from '@nestjs/config';
-import { UtilisateurController } from './utilisateur/utilisateur.controller';
-import { UtilisateurService } from './utilisateur/utilisateur.service';
 import { UtilisateurModule } from './utilisateur/utilisateur.module';
 @Module({
   imports: [
