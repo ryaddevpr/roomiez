@@ -1,13 +1,11 @@
 import { Body, Controller, Get, Param, Patch, Post, UsePipes } from '@nestjs/common';
 import { UtilisateurService } from './utilisateur.service';
-import {
-  CreateUtilisateurZodDto,
-  createUtilisateurZodSchema,
-} from './dto/createUtilisateurZod.dto';
+
 import { ZodValidationPipe } from './pipes/zodValidationPipe';
 import { ParsedIdPipe } from './pipes/parseIdPipes';
 import { UpdateUtilisateurDto } from './dto/updateUtilisateur.dto';
 import { LoginUtilisateurDto } from './dto/LoginUtilisateur.dto';
+import { CreateUtilisateurZodDto, createUtilisateurZodSchema } from './dto/createUtilisateurZod.dto';
 @Controller('utilisateur')
 export class UtilisateurController {
   constructor(private utilisateurService: UtilisateurService) {}
