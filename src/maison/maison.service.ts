@@ -20,11 +20,19 @@ export class MaisonService {
   }
 
   async findOne(id: number) {
-    const maison = await this.maisonRepo.findOne({ where: { id } });
+    const maison = await this.maisonRepo.findOne({ where: { id } })
+
     if (!maison) {
       throw new NotFoundException('Maison not found');
     }
-    return maison;
+    const proprietaire = await this.utilisateurRepo.findOne({ where: { id: maison.proprietaireId } });
+   
+    const maisonWithProprietaire = {
+      ...maison,
+      proprietaire
+    }
+    
+    return maisonWithProprietaire;
   }
 
   async create(maison: CreateMaisonDto) {

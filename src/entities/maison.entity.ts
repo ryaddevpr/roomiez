@@ -23,4 +23,9 @@ export class Maison {
     onDelete: 'CASCADE',
   })
   proprietaire: Utilisateur;
+
+  @Column()
+  proprietaireId: number;
+
+
 }
