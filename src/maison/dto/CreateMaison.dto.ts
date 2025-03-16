@@ -10,21 +10,21 @@ import {
 export class CreateMaisonDto {
   @IsString()
   @IsNotEmpty()
-  address: string = "";
+  address: string ;
 
   @IsString()
   @IsNotEmpty()
-  city: string = "";
+  city: string ;
 
   @IsNumber()
   @IsPositive()
   @Type(() => Number)
-  price: number = 0;
+  price: number ;
 
   @IsNumber()
   @IsPositive()
   @Type(() => Number)
-  size: number = 0;
+  size: number ;
 
   @IsOptional()
   @IsNumber()
