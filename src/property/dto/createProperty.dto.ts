@@ -5,11 +5,11 @@ export class CreatePropertyDto {
   @Length(2, 10, {
     message: 'Name must be between 2 and 10 characters',
   })
-  name: string;
+  name: string = "";
   @IsString()
   @Length(2, 10, { groups: ['create'] })
   @Length(1, 15, { groups: ['update'] })
-  description: string;
+  description: string = "";
   @IsInt()
-  price: number;
+  price: number = 0;
 }

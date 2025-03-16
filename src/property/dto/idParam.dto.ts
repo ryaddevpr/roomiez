@@ -3,5 +3,5 @@ import { IsInt, IsPositive } from 'class-validator';
 export class IdParamDto {
   @IsInt()
   @IsPositive()
-  id: number;
+  id: number = 0;
 }

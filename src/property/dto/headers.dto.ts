@@ -6,5 +6,5 @@ export class HeadersDto {
   @Expose({
     name: 'access-token',
   })
-  accessToken: string;
+  accessToken: string = "";
 }
