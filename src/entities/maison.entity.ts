@@ -5,22 +5,22 @@ import { Utilisateur } from './utilisateur.entity';
 @Entity()
 export class Maison {
   @PrimaryGeneratedColumn()
-  id: number = 0;
+  id: number;
 
   @Column()
-  address: string = "";
+  address: string;
 
   @Column()
-  city: string = "";
+  city: string;
 
   @Column()
-  price: number = 0;
+  price: number;
 
   @Column()
-  size: number = 0; // in square meters
+  size: number; // in square meters
 
   @ManyToOne('Utilisateur', 'maisons', {
     onDelete: 'CASCADE',
   })
-  proprietaire: Utilisateur = new Utilisateur();
+  proprietaire: Utilisateur;
 }

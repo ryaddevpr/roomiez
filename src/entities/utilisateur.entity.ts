@@ -6,24 +6,24 @@ import { Maison } from './maison.entity';
 @Entity()
 export class Utilisateur {
   @PrimaryGeneratedColumn()
-  id: number = 0;
+  id: number ;
 
   @Column()
-  name: string = "";
+  name: string;
 
   @Column()
-  email: string = "";
+  email: string;
 
   @Column()
-  password: string = "";
+  password: string;
 
   @Column({
     type: 'enum',
     enum: UtilisateurRole,
     default: UtilisateurRole.LOCATAIRE,
   })
-  role: string = "" ;
+  role: string;
 
   @OneToMany('Maison', 'proprietaire')
-  maisons: Maison[] = [];
+  maisons: Maison[];
 }
