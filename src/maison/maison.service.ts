@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Maison } from '../entities/maison.entity';
 import { Repository } from 'typeorm';
@@ -31,14 +31,14 @@ export class MaisonService {
       where: { id: maison.proprietaire },
     });
 
-    console.log('maison');
-    console.log(maison);
-    console.log('proprietaire');
-    console.log(proprietaire);
-
     if (!proprietaire) {
       throw new NotFoundException('Propriétaire not found');
     }
+
+    if (proprietaire.role !== 'PROPRIETAIRE') {
+      throw new BadRequestException('Propriétaire is not a propriétaire');
+    }
+
     const newMaison = this.maisonRepo.create({
       ...maison,
       proprietaire,
