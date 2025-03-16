@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { CreateMaisonDto } from './dto/CreateMaison.dto';
 import { UpdateMaisonDto } from './dto/updateMaison.dto';
 import { Utilisateur } from '../entities/utilisateur.entity';
+import { UtilisateurRole } from '../types/utilisateur';
 @Injectable()
 export class MaisonService {
   constructor(
@@ -35,7 +36,7 @@ export class MaisonService {
       throw new NotFoundException('Propriétaire not found');
     }
 
-    if (proprietaire.role !== 'PROPRIETAIRE') {
+    if (proprietaire.role !== UtilisateurRole.PROPRIETAIRE) {
       throw new BadRequestException('Propriétaire is not a propriétaire');
     }
 
