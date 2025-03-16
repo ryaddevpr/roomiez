@@ -3,11 +3,11 @@ import { UtilisateurRole } from '../../types/utilisateur';
 
 export class CreateUtilisateurDto {
   @IsString()
-  name: string;
+  name: string = "";
   @IsEmail()
-  email: string;
+  email: string = "";
   @IsString()
-  password: string;
+  password: string = "";
   @IsEnum(UtilisateurRole)
-  role: UtilisateurRole;
+  role: UtilisateurRole = UtilisateurRole.PROPRIETAIRE;
 }

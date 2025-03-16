@@ -1,5 +1,5 @@
-import { UtilisateurRole } from '../../types/utilisateur';
 import { z } from 'zod';
+import { UtilisateurRole } from '../../types/utilisateur';
 
 export const createUtilisateurZodSchema = z.object({
   name: z.string().min(1),
