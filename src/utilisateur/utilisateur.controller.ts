@@ -3,11 +3,11 @@ import { UtilisateurService } from './utilisateur.service';
 import {
   CreateUtilisateurZodDto,
   createUtilisateurZodSchema,
-} from './dto/createCustomerZod.dto';
+} from './dto/createUtilisateurZod.dto';
 import { ZodValidationPipe } from './pipes/zodValidationPipe';
 import { ParsedIdPipe } from './pipes/parseIdPipes';
 import { UpdateUtilisateurDto } from './dto/updateUtilisateur.dto';
-
+import { LoginUtilisateurDto } from './dto/LoginUtilisateur.dto';
 @Controller('utilisateur')
 export class UtilisateurController {
   constructor(private utilisateurService: UtilisateurService) {}
@@ -31,5 +31,10 @@ export class UtilisateurController {
   @Patch(':id')
   update(@Param('id', ParsedIdPipe) id, @Body() dto: UpdateUtilisateurDto) {
     return this.utilisateurService.update(id, dto);
+  }
+
+  @Post('login')
+  login(@Body() dto: LoginUtilisateurDto) {
+    return this.utilisateurService.login(dto);
   }
 }

@@ -22,5 +22,6 @@ import { Utilisateur } from '../entities/utilisateur.entity';
     },
     UtilisateurService,
   ],
+  exports: [TypeOrmModule.forFeature([Utilisateur])], // Add this line
 })
 export class UtilisateurModule {}

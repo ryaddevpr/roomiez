@@ -1,18 +1,18 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+// @Entity()
 export class Property {
-  @PrimaryGeneratedColumn()
-  id: number;
+  // @PrimaryGeneratedColumn()
+  // id: number;
 
-  @Column()
-  name: string;
+  // @Column()
+  // name: string;
 
-  @Column()
-  description: string;
+  // @Column()
+  // description: string;
 
-  @Column({ default: 0 })
-  price: number;
+  // @Column({ default: 0 })
+  // price: number;
 
   
 }

@@ -7,4 +7,5 @@ export const pgConfig: PostgresConnectionOptions = {
   url: process.env.DATABASE_URL, // Now this will have the correct value
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: true,
+  
 };

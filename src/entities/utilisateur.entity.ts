@@ -1,5 +1,7 @@
-import { UtilisateurRole } from 'src/types/utilisateur';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+// utilisateur.entity.ts
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { UtilisateurRole } from '../types/utilisateur';
+import { Maison } from './maison.entity';
 
 @Entity()
 export class Utilisateur {
@@ -19,7 +21,9 @@ export class Utilisateur {
     type: 'enum',
     enum: UtilisateurRole,
     default: UtilisateurRole.LOCATAIRE,
-    unique: true,
   })
   role: string;
+
+  @OneToMany('Maison', 'proprietaire')
+  maisons: Maison[];
 }
