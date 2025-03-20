@@ -10,6 +10,7 @@ import {
 import { MaisonService } from './maison.service';
 import { CreateMaisonDto } from './dto/CreateMaison.dto';
 import { UpdateMaisonDto } from './dto/updateMaison.dto';
+import { FormDataRequest } from 'nestjs-form-data';
 @Controller('maison')
 export class MaisonController {
   constructor(private maisonService: MaisonService) {}
@@ -25,11 +26,13 @@ export class MaisonController {
   }
 
   @Post()
+  @FormDataRequest()
   create(@Body() maison: CreateMaisonDto) {
     return this.maisonService.create(maison);
   }
 
   @Put(':id')
+  @FormDataRequest()
   update(@Param('id') id: string, @Body() maison: UpdateMaisonDto) {
     return this.maisonService.update(+id, maison);
   }

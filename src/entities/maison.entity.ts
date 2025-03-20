@@ -27,5 +27,9 @@ export class Maison {
   @Column()
   proprietaireId: number;
 
-
+  @Column({
+    type: 'text',
+    nullable: true,
+  })
+  image: string;
 }

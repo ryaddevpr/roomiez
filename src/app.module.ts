@@ -7,6 +7,7 @@ import { pgConfig } from './dbConfig';
 import { ConfigModule } from '@nestjs/config';
 import { UtilisateurModule } from './utilisateur/utilisateur.module';
 import { MaisonModule } from './maison/maison.module';
+import { NestjsFormDataModule } from 'nestjs-form-data';
 @Module({
   imports: [
     ConfigModule.forRoot({}),
@@ -14,6 +15,7 @@ import { MaisonModule } from './maison/maison.module';
     // PropertyModule,
     UtilisateurModule,
     MaisonModule,
+    NestjsFormDataModule, 
   ],
   controllers: [AppController],
   providers: [AppService],
