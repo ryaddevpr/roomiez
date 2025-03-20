@@ -9,5 +9,6 @@
     imports: [TypeOrmModule.forFeature([Maison]), UtilisateurModule],
     controllers: [MaisonController],
     providers: [MaisonService],
+    exports: [TypeOrmModule.forFeature([Maison])],
   })
   export class MaisonModule {}

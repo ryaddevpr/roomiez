@@ -11,9 +11,9 @@ import { MaisonModule } from './maison/maison.module';
   imports: [
     ConfigModule.forRoot({}),
     TypeOrmModule.forRoot(pgConfig),
-    MaisonModule,
     // PropertyModule,
     UtilisateurModule,
+    MaisonModule,
   ],
   controllers: [AppController],
   providers: [AppService],

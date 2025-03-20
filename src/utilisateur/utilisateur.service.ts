@@ -19,6 +19,9 @@ export class UtilisateurService {
 
   async findAll() {
     const utilisateurs = await this.utilisateurRepo.find();
+
+    
+
     return utilisateurs;
   }
 
@@ -26,6 +29,7 @@ export class UtilisateurService {
     const utilisateur = await this.utilisateurRepo.findOne({
       where: { id },
     });
+    console.log(utilisateur)
     if (!utilisateur) {
       throw new NotFoundException('Utilisateur not found');
     }

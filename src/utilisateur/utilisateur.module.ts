@@ -7,7 +7,7 @@ import { Utilisateur } from '../entities/utilisateur.entity';
 
 @Module({
   controllers: [UtilisateurController],
-  imports: [TypeOrmModule.forFeature([Utilisateur])],
+  imports: [TypeOrmModule.forFeature([Utilisateur]), ],
   providers: [
     {
       provide: APP_PIPE,
@@ -21,6 +21,7 @@ import { Utilisateur } from '../entities/utilisateur.entity';
       }),
     },
     UtilisateurService,
+  
   ],
   exports: [TypeOrmModule.forFeature([Utilisateur])], // Add this line
 })
